@@ -72,19 +72,19 @@ public abstract class Account {
         this.balance = balance;
     }
 
-    public Long getprimaryOwnerId() {
+    public Long getPrimaryOwnerId() {
         return primaryOwnerId;
     }
 
-    public void setprimaryOwnerId(Long primaryOwnerId) {
+    public void setPrimaryOwnerId(Long primaryOwnerId) {
         this.primaryOwnerId = primaryOwnerId;
     }
 
-    public Long getsecondaryOwnerId() {
+    public Long getSecondaryOwnerId() {
         return secondaryOwnerId;
     }
 
-    public void setsecondaryOwnerId(Long secondaryOwnerId) {
+    public void setSecondaryOwnerId(Long secondaryOwnerId) {
         this.secondaryOwnerId = secondaryOwnerId;
     }
 

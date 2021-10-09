@@ -1,10 +1,12 @@
 package com.ironhack.proxyaccountservice.model;
 
 import com.ironhack.proxyaccountservice.classes.Money;
+import com.ironhack.proxyaccountservice.enums.Status;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
@@ -61,7 +63,16 @@ public class Savings extends Account{
     public Savings() {
     }
 
-    public Savings(Money balance, String secretKey, Money penaltyFee, LocalDate creationDate,  Money interestRate, Money minimumBalance, Long primaryOwnerId, Long secondaryOwnerId) {
+    public Savings(Long id, Money balance, Status status, Long primaryOwnerId, Long secondaryOwnerId, List<Transaction> sentTransactions, List<Transaction> receivedTransactions, String secretKey, Money penaltyFee, LocalDate creationDate, Money interestRate, Money minimumBalance) {
+        super(id, balance, status, primaryOwnerId, secondaryOwnerId, sentTransactions, receivedTransactions);
+        this.secretKey = secretKey;
+        this.penaltyFee = penaltyFee;
+        this.creationDate = creationDate;
+        this.interestRate = interestRate;
+        this.minimumBalance = minimumBalance;
+    }
+
+    public Savings(Money balance, String secretKey, Money penaltyFee, LocalDate creationDate, Money interestRate, Money minimumBalance, Long primaryOwnerId, Long secondaryOwnerId) {
 
         setBalance(balance);
         this.secretKey = secretKey;
@@ -93,11 +104,6 @@ public class Savings extends Account{
     }
 
 
-
-    public void setBalance(Money balance) {
-
-
-    }
 
     public String getSecretKey() {
         return secretKey;
