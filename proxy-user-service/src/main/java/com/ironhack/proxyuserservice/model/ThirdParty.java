@@ -9,24 +9,14 @@ import java.security.spec.InvalidKeySpecException;
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
 public class ThirdParty extends User{
-    private String name;
     private String hashedKey;
 
     //hashed key
     //cuando haga el metodo meto las referencias
 
 
-    public ThirdParty(String name, String hashedKey) {
-        this.name = name;
+    public ThirdParty(String hashedKey) {
         this.hashedKey = hashedKey;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getHashedKey() {

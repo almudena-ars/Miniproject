@@ -11,23 +11,15 @@ CREATE TABLE IF NOT EXISTS `demo`.`user` (
   `user_name` VARCHAR(255) NULL DEFAULT NULL,
   PRIMARY KEY (`id`));
 
-INSERT INTO user (user_name, password) VALUES
-("admin","$2a$10$MSzkrmfd5ZTipY0XkuCbAejBC9g74MAg2wrkeu8/m1wQGXDihaX3e");
-
 DROP TABLE IF EXISTS `demo`.`admin` ;
 CREATE TABLE IF NOT EXISTS `demo`.`admin` (
-  `name` VARCHAR(255) NULL DEFAULT NULL,
   `id` BIGINT NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`id`) REFERENCES `demo`.`user` (`id`));
 
-INSERT INTO admin(name, id) VALUES
-("admin", 1);
-
 DROP TABLE IF EXISTS `demo`.`third_party` ;
 CREATE TABLE IF NOT EXISTS `demo`.`third_party` (
   `hashed_key` VARCHAR(255) NULL DEFAULT NULL,
-  `name` VARCHAR(255) NULL DEFAULT NULL,
   `id` BIGINT NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`id`) REFERENCES `demo`.`user` (`id`));
@@ -40,9 +32,6 @@ CREATE TABLE IF NOT EXISTS `demo`.`role` (
   `user_id` BIGINT NULL DEFAULT NULL,
 PRIMARY KEY (`id`),
 FOREIGN KEY (`user_id`) REFERENCES `demo`.`user` (`id`));
-
-INSERT INTO role (name, user_id) VALUES
-("ADMIN", 1);
 
 
 DROP TABLE IF EXISTS `demo`.`account_holder` ;
