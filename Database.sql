@@ -8,10 +8,10 @@ DROP TABLE IF EXISTS `demo`.`user` ;
 CREATE TABLE IF NOT EXISTS `demo`.`user` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `password` VARCHAR(255) NULL DEFAULT NULL,
-  `username` VARCHAR(255) NULL DEFAULT NULL,
+  `user_name` VARCHAR(255) NULL DEFAULT NULL,
   PRIMARY KEY (`id`));
 
-INSERT INTO user (username, password) VALUES
+INSERT INTO user (user_name, password) VALUES
 ("admin","$2a$10$MSzkrmfd5ZTipY0XkuCbAejBC9g74MAg2wrkeu8/m1wQGXDihaX3e");
 
 DROP TABLE IF EXISTS `demo`.`admin` ;
@@ -51,7 +51,6 @@ CREATE TABLE IF NOT EXISTS `demo`.`account_holder` (
   `mailing_city` VARCHAR(255) NULL DEFAULT NULL,
   `mailing_postal_code` VARCHAR(255) NULL DEFAULT NULL,
   `mailing_street` VARCHAR(255) NULL DEFAULT NULL,
-  `name` VARCHAR(255) NULL DEFAULT NULL,
   `primary_city` VARCHAR(255) NULL DEFAULT NULL,
   `primary_postal_code` VARCHAR(255) NULL DEFAULT NULL,
   `primary_street` VARCHAR(255) NULL DEFAULT NULL,

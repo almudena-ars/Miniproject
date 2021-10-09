@@ -12,8 +12,6 @@ import java.util.Set;
 @PrimaryKeyJoinColumn(name = "id")
 public class AccountHolder extends User{
 
-
-    private String name;
     @Column(name = "date_of_birth")
     private LocalDate birthDate;
     @Embedded
@@ -35,64 +33,6 @@ public class AccountHolder extends User{
     private Address mailingAddress;
 
 
-    /*@JsonIgnore
-    @OneToMany(mappedBy = "primaryOwner")
-    private List<Checking> primaryChecking;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "secondaryOwner")
-    private List<Checking> secondaryChecking;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "primaryOwner")
-    private List<CreditCard> primaryCreditCard;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "secondaryOwner")
-    private List<CreditCard> secondaryCreditCard;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "primaryOwner")
-    private List<Savings> primarySavings;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "secondaryOwner")
-    private List<Savings> secondarySavings;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "primaryOwner")
-    private List<StudentChecking> primaryStudentChecking;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "secondaryOwner")
-    private List<StudentChecking> secondaryStudentChecking;*/
-
-    //@JsonIgnore
-    /*@OneToMany(mappedBy = "accountHolderSender")
-    private List<Sender> sent;
-
-    @OneToMany(mappedBy = "accountHolderReceiver")
-    private List<Receiver> received;*/
-
-
-
-
-    /*@ManyToMany(mappedBy = "accountholders")
-    private List<Transaction> transactions;*/
-
-    /*@OneToMany(mappedBy = "receiver")
-    private List<Transaction> receivedTransactions;*/
-
-    /*@OneToMany(mappedBy = "accountHolder")
-    private List<Transaction> transactions;*/
-
-    /*@OneToMany(mappedBy = "sendingAccountHolder")
-    private List<Transaction> sentTransactions;
-
-    @OneToMany(mappedBy = "receivingAccountHolder")
-    private List<Transaction> receivedTransactions;*/
-
-
 
     public AccountHolder() {
     }
@@ -103,18 +43,9 @@ public class AccountHolder extends User{
 
 
     public AccountHolder(String name, LocalDate birthDate, Address primaryAddress, Address mailingAddress) {
-        this.name = name;
         this.birthDate = birthDate;
         this.primaryAddress = primaryAddress;
         this.mailingAddress = mailingAddress;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public LocalDate getBirthDate() {
@@ -142,19 +73,4 @@ public class AccountHolder extends User{
     }
 
 
-    /*public List<Transaction> getSentTransactions() {
-        return sentTransactions;
-    }
-
-    public void setSentTransactions(List<Transaction> sentTransactions) {
-        this.sentTransactions = sentTransactions;
-    }*/
-
-    /*public List<Transaction> getReceivedTransactions() {
-        return receivedTransactions;
-    }
-
-    public void setReceivedTransactions(List<Transaction> receivedTransactions) {
-        this.receivedTransactions = receivedTransactions;
-    }*/
 }
