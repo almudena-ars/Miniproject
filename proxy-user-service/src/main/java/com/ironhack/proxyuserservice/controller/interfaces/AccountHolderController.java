@@ -16,7 +16,7 @@ public interface AccountHolderController {
 
     AccountHolder getAccountHolderById(Long id);
 
-    void addAccountHolder(AccountHolderDTO accountHolderDTO);
+    AccountHolder addAccountHolder(AccountHolderDTO accountHolderDTO);
 
     Set<Role> getRoles(Long id);
 }

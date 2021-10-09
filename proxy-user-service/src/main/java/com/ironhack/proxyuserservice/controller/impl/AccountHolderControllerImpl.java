@@ -42,8 +42,8 @@ public class AccountHolderControllerImpl implements AccountHolderController {
 
     @PostMapping("/accountholder")
     @ResponseStatus(HttpStatus.CREATED)
-    public void addAccountHolder(@RequestBody @Valid AccountHolderDTO accountHolderDTO) {
-        accountHolderService.addAccountHolder(accountHolderDTO);
+    public AccountHolder addAccountHolder(@RequestBody @Valid AccountHolderDTO accountHolderDTO) {
+        return accountHolderService.addAccountHolder(accountHolderDTO);
     }
 
     @GetMapping("/accountholder/roles/{id}")

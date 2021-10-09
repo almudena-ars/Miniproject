@@ -16,5 +16,5 @@ public interface AdminController {
 
     Admin getAdminById(Long id);
 
-    void addAdmin(AccountHolderDTO adminDTO);
+    Admin addAdmin(AccountHolderDTO adminDTO);
 }

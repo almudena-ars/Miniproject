@@ -9,7 +9,7 @@ import java.util.List;
 public interface AccountHolderService {
     AccountHolder getAccountHolderById(Long id);
 
-    void addAccountHolder(AccountHolderDTO accountHolderDTO);
+    AccountHolder addAccountHolder(AccountHolderDTO accountHolderDTO);
 
     List<AccountHolder> findAll();
 }

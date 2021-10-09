@@ -35,8 +35,8 @@ public class AdminControllerImpl implements AdminController {
 
     @PostMapping("/admin")
     @ResponseStatus(HttpStatus.CREATED)
-    public void addAdmin(@RequestBody @Valid AccountHolderDTO adminDTO) {
-        adminService.addAdmin(adminDTO);
+    public Admin addAdmin(@RequestBody @Valid AccountHolderDTO adminDTO) {
+        return adminService.addAdmin(adminDTO);
     }
 
 

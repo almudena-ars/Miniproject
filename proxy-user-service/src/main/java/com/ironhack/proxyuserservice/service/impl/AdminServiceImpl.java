@@ -58,7 +58,7 @@ public class AdminServiceImpl implements AdminService {
         }
     }
 
-    public void addAdmin(AccountHolderDTO adminDTO) {
+    public Admin addAdmin(AccountHolderDTO adminDTO) {
         Admin admin = new Admin();
 
         Set<Role> roleSet = new HashSet<>();
@@ -76,6 +76,8 @@ public class AdminServiceImpl implements AdminService {
         adminRepository.save(admin);
 
         roleRepository.save(role);
+
+        return admin;
     }
 
 }

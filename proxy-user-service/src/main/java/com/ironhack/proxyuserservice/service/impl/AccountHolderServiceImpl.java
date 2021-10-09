@@ -56,7 +56,7 @@ public class AccountHolderServiceImpl implements AccountHolderService {
         }
     }
 
-    public void addAccountHolder(AccountHolderDTO accountHolderDTO) {
+    public AccountHolder addAccountHolder(AccountHolderDTO accountHolderDTO) {
 
         Address primaryAddress = new Address();
         primaryAddress.setCity(accountHolderDTO.getPrimaryCity());
@@ -88,9 +88,13 @@ public class AccountHolderServiceImpl implements AccountHolderService {
         accountHolder.setRoles(roleSet);
 
         logger.info("Saved: " + accountHolder.toString());
+        roleRepository.save(role);
+
         accountHolderRepository.save(accountHolder);
 
-        roleRepository.save(role);
+        return accountHolder;
+
+
 
     }
 
